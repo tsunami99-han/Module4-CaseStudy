@@ -3,6 +3,7 @@ package com.codegym.model;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
+import java.util.Optional;
 import java.util.Set;
 
 @Entity
@@ -25,7 +26,7 @@ public class User {
 
     private String background;
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     private Set<Role> roleSet;
 
     private String address;
